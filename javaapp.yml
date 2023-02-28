@@ -7,16 +7,19 @@ metadata:
   name: java-deployment
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      name: javawebapp
   template:
     metadata:
       labels:
         name: javawebapp
     spec:
       containers:
-        - image: 102402/javaapp
-          name: javawebapp
-          ports:
-            containerPort: 8080
+      - image: 102402/javaapp
+        name: javawebapp
+        ports:
+          - containerPort: 8080
 ---
 apiVersion: v1
 kind: Service
