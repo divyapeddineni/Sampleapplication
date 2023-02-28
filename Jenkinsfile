@@ -15,6 +15,6 @@ node{
         sh 'docker push 102402/javaapp'
      }
      stage("Deploy To Kubernetes Cluster"){
-        sh 'kubectl apply -f javaapplication.yml'
+        sh 'kubectl apply -f javaapp.yml'
       } 
 }
