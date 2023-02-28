@@ -16,5 +16,6 @@ node{
      }
      stage("Deploy To Kubernetes Cluster"){
         sh 'kubectl apply -f javaapp.yml'
+        sh 'kubectl set image deployments/java-deployment javawebapp=102402/javaapp:${BUILD_NUMBER}'
       } 
 }
