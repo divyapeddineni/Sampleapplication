@@ -41,7 +41,7 @@
 	<div class="row">
 		<div class="col-md-8">
 			<h2>Welcome To java project demo.</h2>
-			<h3>Sample java Application</h3>
+			<h3>Sample Application</h3>
 		</div>	
 	</div>
 
