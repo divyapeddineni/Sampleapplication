@@ -6,7 +6,12 @@ metadata:
     name: javawebapp
   name: java-deployment
 spec:
-  replicas: 1
+  replicas: 2
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1  
+      maxSurge: 1
   selector:
     matchLabels:
       name: javawebapp
@@ -16,7 +21,7 @@ spec:
         name: javawebapp
     spec:
       containers:
-      - image: 102402/javaapp
+      - image: 102402/javaapp:${BUILD_NUMBER}
         name: javawebapp
         ports:
           - containerPort: 8080
